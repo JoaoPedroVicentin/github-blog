@@ -1,11 +1,16 @@
-import reactLogo from './assets/react.svg'
+import { ThemeProvider } from "styled-components";
+import { defaultTheme } from './styles/themes/default';
+import { GlobalStyle } from './styles/global';
+import { Header } from './components/Header';
+import { Blog } from "./pages/Blog";
 
 function App() {
 
   return (
-    <div>
-      <h1>HELLO WORLD</h1>
-    </div>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
+      <Blog />
+    </ThemeProvider>
   )
 }
 
