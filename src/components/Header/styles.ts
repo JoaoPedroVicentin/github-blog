@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const HeaderContainer = styled.main`
     height: 18.5rem;
     width: 100%;
-    max-width: 1440px;
     margin: 0 auto;
     background: url('src/assets/headerBackground.png');
-    background-color: red;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     display: flex;
     align-items: flex-start;
