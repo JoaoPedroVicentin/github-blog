@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.main`
-    height: 18.5rem;
+    min-height: 18.5rem;
     width: 100%;
     margin: 0 auto;
     background: url('src/assets/headerBackground.png');
