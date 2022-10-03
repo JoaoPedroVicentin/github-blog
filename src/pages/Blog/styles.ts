@@ -80,6 +80,7 @@ export const PostCard = styled.div`
 
         span{
             font-size: 0.875rem;
+            color: ${props => props.theme['base-text']};
         }
     }
 
@@ -87,6 +88,8 @@ export const PostCard = styled.div`
         max-height: 100px;
         overflow: hidden;
         text-overflow: ellipsis;
+        color: ${props => props.theme['base-text']};
+        text-decoration: none;
     }
 
     &:hover{

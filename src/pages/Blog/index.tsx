@@ -1,8 +1,10 @@
 import { Profile } from "../../components/Profile";
 import { InputSearch, PostCard, PostsContainer, SearchContainer } from "./styles";
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
 
 export function Blog() {
+
     return (
         <div>
             <Profile />

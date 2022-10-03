@@ -41,7 +41,7 @@ export const InfosHeader = styled.header`
         font-size: 0.75rem;
         color: ${props => props.theme['blue']};
         display: flex;
-        align-items: baseline;
+        align-items: center;
         justify-content: center;
         gap: 0.5rem;
         text-decoration: none;
@@ -49,7 +49,7 @@ export const InfosHeader = styled.header`
         transition: all 0.4s;
 
         span{
-            height: 1.1875rem;
+            height: 1.45rem;
         }
 
         &:hover{
