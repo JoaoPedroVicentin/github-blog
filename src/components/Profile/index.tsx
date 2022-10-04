@@ -1,38 +1,15 @@
 import { InfosContainer, InfosHeader, InfosFooter, ProfileContainer } from "./styles";
-import imgUser from "../../assets/imgUser.jpeg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserGroup ,faArrowUpRightFromSquare, faBuilding  } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { useEffect, useState } from "react";
-
-interface UserData{
-    name: string,
-    user: string,
-    company: string,
-    followers: number,
-    bio: string,
-    img: string,
-    url: string
-}
+import { useContextSelector } from "use-context-selector";
+import { IssuesContext } from "../../context/IssuesContext";
 
 export function Profile() {
 
-    useEffect(() => {
-        fetch('http://api.github.com/users/JoaoPedroVicentin').then(response => response.json())
-        .then(data => {
-            setUserData({
-                name: data.name,
-                user: data.login,
-                company: data.company,
-                followers: data.followers,
-                bio: data.bio,
-                img: data.avatar_url,
-                url: data.html_url
-            })
-        })
-    },[])
-
-    const [userData, setUserData] = useState<UserData>()
+    const userData = useContextSelector(IssuesContext, (context) => {
+        return context.userData
+    })
 
     return (
         <ProfileContainer>
