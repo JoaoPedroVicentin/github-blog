@@ -4,7 +4,7 @@
 <br>
 
  <h1 align="center">
-    <img alt="Readme" title="Readme" src="src/assets/imgGit1.png" />
+    <img alt="Readme" title="Readme" src="src/assets/gitImg.jpg" />
  </h1>
 
  ##
@@ -18,6 +18,7 @@
   <img align="center" alt="TypeScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
   <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+ <img align="center" alt="Styled-Components" height="40" width="40" src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png" />
 </div>
 <br>
 
