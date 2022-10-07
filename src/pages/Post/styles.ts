@@ -79,3 +79,11 @@ export const InfosFooter = styled.footer`
     }
 `
 
+export const PostContainer = styled.div`
+    width: 54rem;
+`
+
+export const PostContent = styled.div`
+    padding: 2.5rem 2rem;
+`
+

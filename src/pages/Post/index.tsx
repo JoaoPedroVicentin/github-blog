@@ -1,10 +1,12 @@
-import { InfosContainer, InfosHeader, InfosFooter, ProfileContainer } from "./styles";
+import { InfosContainer, InfosHeader, InfosFooter, ProfileContainer, PostContainer, PostContent } from "./styles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment, faArrowUpRightFromSquare, faCalendarDay, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { NavLink, useParams } from "react-router-dom";
 import { api } from "../../lib/axios";
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { relativeDateFormatter } from "../../utils/formater";
 
 interface IssueData {
     id: number,
@@ -31,7 +33,7 @@ export function Post() {
         number: 0,
         html_url: '',
         comments: 0,
-        user: { login: ''},
+        user: { login: '' },
     })
 
     async function fetchPost() {
@@ -44,21 +46,29 @@ export function Post() {
     }, [])
 
     return (
-        <ProfileContainer>
-            <InfosContainer>
-                <InfosHeader>
-                    <NavLink to='/'>
-                        <FontAwesomeIcon icon={faChevronLeft} fontSize={12} /><span>VOLTAR</span>
-                    </NavLink>
-                    <a href={post.html_url} target="_blank"><span>VER NO GITHUB</span> <FontAwesomeIcon icon={faArrowUpRightFromSquare} fontSize={12} /> </a>
-                </InfosHeader>
-                <h1>{post.title}</h1>
-                <InfosFooter>
-                    <div> <FontAwesomeIcon icon={faGithub} fontSize={18} /> <span>{post.user.login}</span></div>
-                    <div> <FontAwesomeIcon icon={faCalendarDay} fontSize={14} /> <span>{post.created_at}</span></div>
-                    <div> <FontAwesomeIcon icon={faComment} fontSize={16} /> <span>{post.comments} comentários</span></div>
-                </InfosFooter>
-            </InfosContainer>
-        </ProfileContainer>
+        <PostContainer>
+            <ProfileContainer>
+                <InfosContainer>
+                    <InfosHeader>
+                        <NavLink to='/'>
+                            <FontAwesomeIcon icon={faChevronLeft} fontSize={12} /><span>VOLTAR</span>
+                        </NavLink>
+                        <a href={post.html_url} target="_blank"><span>VER NO GITHUB</span> <FontAwesomeIcon icon={faArrowUpRightFromSquare} fontSize={12} /> </a>
+                    </InfosHeader>
+                    <h1>{post.title}</h1>
+                    <InfosFooter>
+                        <div> <FontAwesomeIcon icon={faGithub} fontSize={18} /> <span>{post.user.login}</span></div>
+                        <div> <FontAwesomeIcon icon={faCalendarDay} fontSize={14} /> <span>{relativeDateFormatter(post.created_at)}</span></div>
+                        <div> <FontAwesomeIcon icon={faComment} fontSize={16} /> <span>{post.comments} comentários</span></div>
+                    </InfosFooter>
+                </InfosContainer>
+            </ProfileContainer>
+
+            <PostContent>
+                <ReactMarkdown>
+                    {post.body}
+                </ReactMarkdown>
+            </PostContent>
+        </PostContainer>
     )
 }

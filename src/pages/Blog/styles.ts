@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const SearchContainer = styled.div`
     width: 54rem;
@@ -56,7 +57,7 @@ export const PostsContainer = styled.div`
     padding: 3rem 0;
 `
 
-export const PostCard = styled.div`
+export const PostCard = styled(Link)`
     background-color: ${props => props.theme['base-post']};
     height: 16.25rem;
     width: 26rem;
@@ -67,6 +68,7 @@ export const PostCard = styled.div`
     gap: 1.25rem 0;
     transition: all ease 0.3s;
     border: 2px solid transparent;
+    text-decoration: none;
 
     div{
         display: grid;
