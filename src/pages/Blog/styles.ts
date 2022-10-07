@@ -59,6 +59,7 @@ export const PostsContainer = styled.div`
 export const PostCard = styled.div`
     background-color: ${props => props.theme['base-post']};
     height: 16.25rem;
+    width: 26rem;
     padding: 2rem;
     border-radius: 10px;
     display: flex;
