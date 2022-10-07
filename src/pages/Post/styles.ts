@@ -85,5 +85,22 @@ export const PostContainer = styled.div`
 
 export const PostContent = styled.div`
     padding: 2.5rem 2rem;
+
+    h1, h2, h3{
+        color: ${props => props.theme['blue']};
+        margin: 1rem 0
+    }
+
+    p{
+        margin: 0.5rem 0
+    }
+
+    a{
+        color: ${props => props.theme['base-text']};
+    }
+
+    ul{
+        padding-left: 1.5rem;
+    }
 `
 

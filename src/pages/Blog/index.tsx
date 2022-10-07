@@ -7,6 +7,7 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import ReactMarkdown from "react-markdown";
 import { relativeDateFormatter } from "../../utils/formater";
+import { Spinner } from "../../components/Spinner";
 
 const searchFormSchema = z.object({
     query: z.string()
