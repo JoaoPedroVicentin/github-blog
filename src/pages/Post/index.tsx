@@ -56,7 +56,7 @@ export function Post() {
     return (
         <PostContainer>
             <ProfileContainer>
-                {isLoading == true ? <Spinner /> :
+                {isLoading === true ? <Spinner /> :
                     <InfosContainer>
                         <InfosHeader>
                             <NavLink to='/'>

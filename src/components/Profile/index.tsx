@@ -2,14 +2,40 @@ import { InfosContainer, InfosHeader, InfosFooter, ProfileContainer } from "./st
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserGroup ,faArrowUpRightFromSquare, faBuilding  } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { useContextSelector } from "use-context-selector";
-import { IssuesContext } from "../../context/IssuesContext";
+import { useEffect, useState } from "react";
+import { api } from "../../lib/axios";
+
+interface UserData {
+    name: string,
+    login: string,
+    company: string,
+    followers: number,
+    bio: string,
+    avatar_url: string,
+    html_url: string
+}
 
 export function Profile() {
 
-    const userData = useContextSelector(IssuesContext, (context) => {
-        return context.userData
+    const [userData, setUserData] = useState<UserData>({
+        name: '',
+        login: '',
+        company: '',
+        followers: 0,
+        bio: '',
+        avatar_url: '',
+        html_url: ''
     })
+
+    async function fetchUser() {
+        const response = await api.get('users/JoaoPedroVicentin')
+        setUserData(response.data)
+    }
+
+    useEffect(() => {
+        fetchUser()
+    }, [])
+
 
     return (
         <ProfileContainer>

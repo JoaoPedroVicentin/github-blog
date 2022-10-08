@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SpinnerContainer = styled.div`
-  margin: 0 auto;
+  margin: 2rem auto;
   align-self: center;
   justify-self: center;
   flex: 1;
