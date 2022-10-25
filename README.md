@@ -27,7 +27,7 @@
 ```bash
 
 #Clone este repositório
-$ git clone https://github.com/JoaoPedroVicentin/Github-Blog.git
+$ git clone https://github.com/JoaoPedroVicentin/github-blog.git
 
 #Instale as dependências
 $ npm i
