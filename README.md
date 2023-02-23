@@ -22,12 +22,14 @@
 </div>
 <br>
 
+<a href="https://github-blog-eight.vercel.app/">Deploy na VERCEL</a>
+
 ##
 
 ```bash
 
 #Clone este repositório
-$ git clone https://github.com/JoaoPedroVicentin/Github-Blog.git
+$ git clone https://github.com/JoaoPedroVicentin/github-blog.git
 
 #Instale as dependências
 $ npm i
